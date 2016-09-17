@@ -36,3 +36,14 @@ CREATE TABLE Telefone (
 	CONSTRAINT telefone_pkey1 PRIMARY KEY (cpf, numero),
 	CONSTRAINT pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf)
 );
+
+-- 1.3 Funcionário
+
+CREATE TABLE Funcionario (
+	cpf varchar2(15),
+	salario number(10,2) NOT NULL,
+	dataAdmissao date NOT NULL,
+	CONSTRAINT funcionario_pkey1 PRIMARY KEY (cpf),
+	CONSTRAINT func_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf),
+	CONSTRAINT Funcionario_checkSal CHECK (salario >= 880.00)
+);
