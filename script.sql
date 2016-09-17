@@ -1,4 +1,4 @@
-/* Script SQL para criação e população de tabelas 
+/* Script SQL para criação e povoamento de tabelas 
 Grupo: 
 	Gabriel		(gvmgs)
 	Jailson		(jcd2)
@@ -56,4 +56,13 @@ CREATE TABLE Assinante (
 	dataAssinatura date NOT NULL,
 	CONSTRAINT assinante_pkey1 PRIMARY KEY (cpf),
 	CONSTRAINT assinante_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf)
+);
+
+-- 1.5 Fotografo
+
+CREATE TABLE Fotografo(
+	cpf varchar2(15),
+	certificado blob,
+	CONSTRAINT fotografo_pkey1 PRIMARY KEY (cpf),
+	CONSTRAINT fotografo_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf)
 );
