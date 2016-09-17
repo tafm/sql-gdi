@@ -52,8 +52,8 @@ CREATE TABLE Funcionario (
 
 CREATE TABLE Assinante (
 	cpf varchar2(15),
-	planoAssinatura varchar2(50),
-	dataAssinatura date,
+	planoAssinatura varchar2(50) NOT NULL,
+	dataAssinatura date NOT NULL,
 	CONSTRAINT assinante_pkey1 PRIMARY KEY (cpf),
 	CONSTRAINT assinante_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf)
 );
