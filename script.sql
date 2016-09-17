@@ -27,3 +27,12 @@ CREATE TABLE Pessoa (
 	CONSTRAINT Pessoa_pkey PRIMARY KEY (cpf),
 	CONSTRAINT Pessoa_checkSexo CHECK (sexo In ('M', 'F'))
 );
+
+-- 1.2 Telefone
+
+CREATE TABLE Telefone (
+	cpf varchar2(15),
+	numero varchar2(50),
+	CONSTRAINT telefone_pkey1 PRIMARY KEY (cpf, numero),
+	CONSTRAINT pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf)
+);
