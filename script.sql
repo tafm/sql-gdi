@@ -129,3 +129,12 @@ CREATE TABLE JornTrabMateria (
 	CONSTRAINT jorntabmateria_jornalista_fkey FOREIGN KEY (cpf) REFERENCES Jornalista (cpf),
 	CONSTRAINT jorntabmateria_materia_fkey FOREIGN KEY (id_materia) REFERENCES Materia (id)
 );
+
+-- 1.12 Premiação
+
+CREATE TABLE Premiacao (
+	evento varchar2(50),
+	data date NOT NULL,
+	categoria varchar2(50),
+	CONSTRAINT Premiacao_pkey PRIMARY KEY (evento, data)
+);
