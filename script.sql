@@ -64,5 +64,16 @@ CREATE TABLE Fotografo(
 	cpf varchar2(15),
 	certificado blob,
 	CONSTRAINT fotografo_pkey1 PRIMARY KEY (cpf),
-	CONSTRAINT fotografo_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Funcionario (cpf)
+	CONSTRAINT fotografo_funcionario_fkey1 FOREIGN KEY (cpf) REFERENCES Funcionario (cpf)
+);
+
+-- 1.6 
+
+CREATE TABLE Jornalista(
+	cpf varchar2(15),
+	mtb varchar2(20),
+	cpf_supervisor varchar2(15),
+	CONSTRAINT jornalista_pkey1 PRIMARY KEY (cpf),
+	CONSTRAINT jornalista_funcionario_fkey1 FOREIGN KEY (cpf) REFERENCES Funcionario (cpf),
+	CONSTRAINT jornalista_fkey1 FOREIGN KEY (cpf_supervisor) REFERENCES Jornalista (cpf)
 );
