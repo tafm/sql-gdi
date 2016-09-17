@@ -93,6 +93,7 @@ CREATE TABLE Titulacao (
 CREATE TABLE Edicao (
 	numero integer,
 	cpf_chefe varchar2(15),
+	data date NOT NULL,
 	CONSTRAINT edicao_pkey PRIMARY KEY (numero),
 	CONSTRAINT edicao_jornalista_fkey1 FOREIGN KEY (cpf_chefe) REFERENCES Jornalista (cpf)
 );
@@ -102,7 +103,6 @@ CREATE TABLE Edicao (
 CREATE TABLE Secao (
 	nome varchar2(30),
 	cpf_coord varchar2(15),
-	data date NOT NULL,
 	CONSTRAINT secao_pkey PRIMARY KEY (nome),
 	CONSTRAINT secao_jornalista_fkey1 FOREIGN KEY (cpf_coord) REFERENCES Jornalista (cpf)
 );
