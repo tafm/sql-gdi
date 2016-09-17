@@ -108,3 +108,24 @@ CREATE TABLE Secao (
 );
 
 -- 1.10 Matéria
+
+CREATE TABLE Materia (
+    id integer,
+    secao varchar2(30),
+    titulo CLOB NOT NULL,
+    data date NOT NULL,
+    conteudo CLOB,
+    anexos CLOB,
+    CONSTRAINT materia_pkey PRIMARY KEY (id),
+    CONSTRAINT materia_secao_fkey1 FOREIGN KEY (secao) REFERENCES Secao (nome)
+ );
+
+-- 1.11 Jornalista <escreve> Matéria
+
+CREATE TABLE JornTrabMateria (
+	cpf varchar2(15),
+	id_materia integer,
+	CONSTRAINT jorntabmateria_pkey PRIMARY KEY (cpf, id_materia),
+	CONSTRAINT jorntabmateria_jornalista_fkey FOREIGN KEY (cpf) REFERENCES Jornalista (cpf),
+	CONSTRAINT jorntabmateria_materia_fkey FOREIGN KEY (id_materia) REFERENCES Materia (id)
+);
