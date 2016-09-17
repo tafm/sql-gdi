@@ -47,3 +47,13 @@ CREATE TABLE Funcionario (
 	CONSTRAINT func_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf),
 	CONSTRAINT Funcionario_checkSal CHECK (salario >= 880.00)
 );
+
+-- 1.4 Assinante
+
+CREATE TABLE Assinante (
+	cpf varchar2(15),
+	planoAssinatura varchar2(50),
+	dataAssinatura date,
+	CONSTRAINT assinante_pkey1 PRIMARY KEY (cpf),
+	CONSTRAINT assinante_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf)
+);
