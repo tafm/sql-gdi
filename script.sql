@@ -64,5 +64,5 @@ CREATE TABLE Fotografo(
 	cpf varchar2(15),
 	certificado blob,
 	CONSTRAINT fotografo_pkey1 PRIMARY KEY (cpf),
-	CONSTRAINT fotografo_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf)
+	CONSTRAINT fotografo_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Funcionario (cpf)
 );
