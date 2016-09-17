@@ -106,3 +106,5 @@ CREATE TABLE Secao (
 	CONSTRAINT secao_pkey PRIMARY KEY (nome),
 	CONSTRAINT secao_jornalista_fkey1 FOREIGN KEY (cpf_coord) REFERENCES Jornalista (cpf)
 );
+
+-- 1.10 Matéria
