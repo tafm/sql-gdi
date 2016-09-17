@@ -85,7 +85,7 @@ CREATE TABLE Titulacao (
 	data date NOT NULL,
 	instituicao varchar2(50) NOT NULL,
 	grau varchar2(30) NOT NULL,
-	CONSTRAINT titulacao_jornalista_fkey1 FOREIGN KEY (cpf) REFERENCES Jornalista(cpf)  
+	CONSTRAINT titulacao_jornalista_fkey1 FOREIGN KEY (cpf) REFERENCES Jornalista (cpf)  
 );
 
 -- 1.8 Edição
@@ -94,5 +94,14 @@ CREATE TABLE Edicao (
 	numero integer,
 	cpf_chefe varchar2(15),
 	CONSTRAINT edicao_pkey PRIMARY KEY (numero),
-	CONSTRAINT edicao_jornalista_fkey1 FOREIGN KEY (cpf_chefe) REFERENCES Jornalista(cpf)
+	CONSTRAINT edicao_jornalista_fkey1 FOREIGN KEY (cpf_chefe) REFERENCES Jornalista (cpf)
+);
+
+-- 1.9 Seção
+
+CREATE TABLE Secao (
+	nome varchar2(30),
+	cpf_coord varchar2(15),
+	CONSTRAINT secao_pkey PRIMARY KEY (nome),
+	CONSTRAINT secao_jornalista_fkey1 FOREIGN KEY (cpf_coord) REFERENCES Jornalista (cpf)
 );
