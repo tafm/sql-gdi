@@ -67,7 +67,7 @@ CREATE TABLE Fotografo(
 	CONSTRAINT fotografo_funcionario_fkey1 FOREIGN KEY (cpf) REFERENCES Funcionario (cpf)
 );
 
--- 1.6 
+-- 1.6 Jornalista
 
 CREATE TABLE Jornalista(
 	cpf varchar2(15),
@@ -76,4 +76,14 @@ CREATE TABLE Jornalista(
 	CONSTRAINT jornalista_pkey1 PRIMARY KEY (cpf),
 	CONSTRAINT jornalista_funcionario_fkey1 FOREIGN KEY (cpf) REFERENCES Funcionario (cpf),
 	CONSTRAINT jornalista_fkey1 FOREIGN KEY (cpf_supervisor) REFERENCES Jornalista (cpf)
+);
+
+-- 1.7 Titulação
+
+CREATE TABLE Titulacao(
+	cpf varchar2(15),
+	data date NOT NULL,
+	instituicao varchar2(50) NOT NULL,
+	grau varchar2(30) NOT NULL,
+	CONSTRAINT titulacao_jornalista_fkey1 FOREIGN KEY (cpf) REFERENCES Jornalista(cpf)  
 );
