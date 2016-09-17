@@ -60,7 +60,7 @@ CREATE TABLE Assinante (
 
 -- 1.5 Fotografo
 
-CREATE TABLE Fotografo(
+CREATE TABLE Fotografo (
 	cpf varchar2(15),
 	certificado blob,
 	CONSTRAINT fotografo_pkey1 PRIMARY KEY (cpf),
@@ -69,7 +69,7 @@ CREATE TABLE Fotografo(
 
 -- 1.6 Jornalista
 
-CREATE TABLE Jornalista(
+CREATE TABLE Jornalista (
 	cpf varchar2(15),
 	mtb varchar2(20),
 	cpf_supervisor varchar2(15),
@@ -80,10 +80,19 @@ CREATE TABLE Jornalista(
 
 -- 1.7 Titulação
 
-CREATE TABLE Titulacao(
+CREATE TABLE Titulacao (
 	cpf varchar2(15),
 	data date NOT NULL,
 	instituicao varchar2(50) NOT NULL,
 	grau varchar2(30) NOT NULL,
 	CONSTRAINT titulacao_jornalista_fkey1 FOREIGN KEY (cpf) REFERENCES Jornalista(cpf)  
+);
+
+-- 1.8 Edição
+
+CREATE TABLE Edicao (
+	numero integer,
+	cpf_chefe varchar2(15),
+	CONSTRAINT edicao_pkey PRIMARY KEY (numero),
+	CONSTRAINT edicao_jornalista_fkey1 FOREIGN KEY (cpf_chefe) REFERENCES Jornalista(cpf)
 );
