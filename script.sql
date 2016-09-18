@@ -159,7 +159,8 @@ CREATE TABLE Foto (
 	id integer,
 	fotografo varchar2(15),
 	materia integer,
+	foto BLOB NOT NULL,
 	CONSTRAINT foto_pkey PRIMARY KEY (id),
-	CONSTRAINT foto_fotografo_fkey1 FOREIGN KEY (cpf) REFERENCES Fotografo (cpf),
-	CONSTRAINT fotos_materia_fkey2 FOREIGN KEY (materia) REFERENCES Materia (cpf)
+	CONSTRAINT foto_fotografo_fkey1 FOREIGN KEY (fotografo) REFERENCES Fotografo (cpf),
+	CONSTRAINT foto_materia_fkey2 FOREIGN KEY (materia) REFERENCES Materia (id)
 );
