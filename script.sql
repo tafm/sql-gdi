@@ -37,7 +37,17 @@ CREATE TABLE Telefone (
 	CONSTRAINT pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf)
 );
 
--- 1.3 Funcionário
+-- 1.3 Assinante
+
+CREATE TABLE Assinante (
+	cpf varchar2(15),
+	planoAssinatura varchar2(50) NOT NULL,
+	dataAssinatura date NOT NULL,
+	CONSTRAINT assinante_pkey1 PRIMARY KEY (cpf),
+	CONSTRAINT assinante_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf)
+);
+
+-- 1.4 Funcionário
 
 CREATE TABLE Funcionario (
 	cpf varchar2(15),
@@ -46,16 +56,6 @@ CREATE TABLE Funcionario (
 	CONSTRAINT funcionario_pkey1 PRIMARY KEY (cpf),
 	CONSTRAINT func_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf),
 	CONSTRAINT Funcionario_checkSal CHECK (salario >= 880.00)
-);
-
--- 1.4 Assinante
-
-CREATE TABLE Assinante (
-	cpf varchar2(15),
-	planoAssinatura varchar2(50) NOT NULL,
-	dataAssinatura date NOT NULL,
-	CONSTRAINT assinante_pkey1 PRIMARY KEY (cpf),
-	CONSTRAINT assinante_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf)
 );
 
 -- 1.5 Fotografo
@@ -180,31 +180,31 @@ CREATE TABLE Evento (
 -- 2.1 Pessoa
 
 INSERT ALL
-INTO Pessoa VALUES ('123456789-45','Leonardo Alves', TO_DATE('16/12/1996', 'dd/MM/yyyy'), 'M', '44900000','Irecê','Bairro', 'Rua Aquela Mesma','16')
-INTO Pessoa VALUES ('888777666-85','Marcos Barreto', TO_DATE('16/08/1996', 'dd/MM/yyyy'), 'M', '99212300','Irecê','Bairro2', 'Rua do Beco','188')
-INTO Pessoa VALUES ('456228741-99','Afonso Gomes', TO_DATE('09/05/1987', 'dd/MM/yyyy'), 'M', '05465203','São Paulo','Liberdade','Av.Paulista','548')
-INTO Pessoa VALUES ('648752006-56','Roberto Andrade', TO_DATE('30/05/1990', 'dd/MM/yyyy'), 'M','54862066','Rio de Janeiro','Leblon','Rua 10','9')
-INTO Pessoa VALUES ('160742365-48','Alice Ayres', TO_DATE('01/01/2000', 'dd/MM/yyyy'), 'F', '98212340','Irecê','Recanto', 'Antonio Cardoso','61')
-INTO Pessoa VALUES ('283492009-11','Ana Maria', TO_DATE('10/05/1997', 'dd/MM/yyyy'), 'F', '54896211','Brasília','Centro', 'Rua JK','7')
-INTO Pessoa VALUES ('945632778-12','Ana Alves',TO_DATE('02/02/1987', 'dd/MM/yyyy'), 'F','66975233','São Paulo','Morumbi','Av. Santo Antônio','400')
-INTO Pessoa VALUES ('549316775-00','Bob Jones', TO_DATE('05/06/1988', 'dd/MM/yyyy'), 'M','75264977','Acre', 'Floresta','Árvore','7')
-INTO Pessoa VALUES ('654823004-11','Amanda Nunes', TO_DATE('06/04/1944', 'dd/MM/yyyy'), 'F','65482236','Recife','CDU','Polidoro', '344')
-INTO Pessoa VALUES ('684997235-01','João Silva', TO_DATE('10/07/1980', 'dd/MM/yyyy'), 'M','95877236','Recife','CDU','UFPE','455')
-INTO Pessoa VALUES ('234908724-88','Vitor Pereira', TO_DATE('15/12/1995', 'dd/MM/yyyy'), 'M','23456000','Recife','Bairro do Caxanga','Avenida Caxangá','230')
-INTO Pessoa VALUES ('171615142-21','Amanda Kezia', TO_DATE('23/10/1994', 'dd/MM/yyyy'), 'F','77800000','Recife','Várzea','João F. Lisboa','120')
+INTO Pessoa VALUES ('123456789-45', 'Leonardo Alves',	TO_DATE('16/12/1996', 'dd/MM/yyyy'), 'M', '44900000', 'Irecê',			'Bairro',				'Rua Aquela Mesma',		'16')
+INTO Pessoa VALUES ('888777666-85', 'Marcos Barreto',	TO_DATE('16/08/1996', 'dd/MM/yyyy'), 'M', '99212300', 'Irecê',			'Bairro2',				'Rua do Beco',			'188')
+INTO Pessoa VALUES ('456228741-99', 'Afonso Gomes',		TO_DATE('09/05/1987', 'dd/MM/yyyy'), 'M', '05465203', 'São Paulo',		'Liberdade',			'Av.Paulista',			'548')
+INTO Pessoa VALUES ('648752006-56', 'Roberto Andrade',	TO_DATE('30/05/1990', 'dd/MM/yyyy'), 'M', '54862066', 'Rio de Janeiro',	'Leblon',				'Rua 10',				'9')
+INTO Pessoa VALUES ('160742365-48', 'Alice Ayres',		TO_DATE('01/01/2000', 'dd/MM/yyyy'), 'F', '98212340', 'Irecê',			'Recanto',				'Antonio Cardoso',		'61')
+INTO Pessoa VALUES ('283492009-11', 'Ana Maria',		TO_DATE('10/05/1997', 'dd/MM/yyyy'), 'F', '54896211', 'Brasília',		'Centro',				'Rua JK',				'7')
+INTO Pessoa VALUES ('945632778-12', 'Ana Alves',		TO_DATE('02/02/1987', 'dd/MM/yyyy'), 'F', '66975233', 'São Paulo',		'Morumbi',				'Av. Santo Antônio',	'400')
+INTO Pessoa VALUES ('549316775-00', 'Bob Jones',		TO_DATE('05/06/1988', 'dd/MM/yyyy'), 'M', '75264977', 'Acre',			'Floresta',				'Árvore',				'7')
+INTO Pessoa VALUES ('654823004-11', 'Amanda Nunes',		TO_DATE('06/04/1944', 'dd/MM/yyyy'), 'F', '65482236', 'Recife',			'CDU',					'Polidoro',				'344')
+INTO Pessoa VALUES ('684997235-01', 'João Silva',		TO_DATE('10/07/1980', 'dd/MM/yyyy'), 'M', '95877236', 'Recife',			'CDU',					'UFPE',					'455')
+INTO Pessoa VALUES ('234908724-88', 'Vitor Pereira',	TO_DATE('15/12/1995', 'dd/MM/yyyy'), 'M', '23456000', 'Recife',			'Bairro do Caxanga',	'Avenida Caxangá',		'230')
+INTO Pessoa VALUES ('171615142-21', 'Amanda Kezia',		TO_DATE('23/10/1994', 'dd/MM/yyyy'), 'F', '77800000', 'Recife',			'Várzea',				'João F. Lisboa',		'120')
 SELECT 1 FROM DUAL;
 
 -- 2.2 Telefone
 
 INSERT ALL
-INTO Telefone VALUES ('123456789-45','081-982661311')
-INTO Telefone VALUES ('123456789-45','074-9818-9022')
-INTO Telefone VALUES ('123456789-45','074-999473373')
-INTO Telefone VALUES ('888777666-85','055-946223584')
-INTO Telefone VALUES ('888777666-85','081-994687752')
-INTO Telefone VALUES ('684997235-01','021-994627756')
-INTO Telefone VALUES ('684997235-01','021-956317785')
-INTO Telefone VALUES ('684997235-01','055-976331520')
-INTO Telefone VALUES ('283492009-11','091-936547785')
-INTO Telefone VALUES ('283492009-11','081-912003600')
+INTO Telefone VALUES ('123456789-45', '081-982661311')
+INTO Telefone VALUES ('123456789-45', '074-9818-9022')
+INTO Telefone VALUES ('123456789-45', '074-999473373')
+INTO Telefone VALUES ('888777666-85', '055-946223584')
+INTO Telefone VALUES ('888777666-85', '081-994687752')
+INTO Telefone VALUES ('684997235-01', '021-994627756')
+INTO Telefone VALUES ('684997235-01', '021-956317785')
+INTO Telefone VALUES ('684997235-01', '055-976331520')
+INTO Telefone VALUES ('283492009-11', '091-936547785')
+INTO Telefone VALUES ('283492009-11', '081-912003600')
 SELECT 1 FROM DUAL;
