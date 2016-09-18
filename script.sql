@@ -164,3 +164,13 @@ CREATE TABLE Foto (
 	CONSTRAINT foto_fotografo_fkey1 FOREIGN KEY (fotografo) REFERENCES Fotografo (cpf),
 	CONSTRAINT foto_materia_fkey2 FOREIGN KEY (materia) REFERENCES Materia (id)
 );
+
+-- 1.15 Evento
+
+CREATE TABLE Evento (
+	nome varchar2(50),
+	fotografo varchar2(15),
+	data date,
+	CONSTRAINT evento_pkey PRIMARY KEY (nome, fotografo, data),
+	CONSTRAINT evento_fotografo_fkey1 FOREIGN KEY (fotografo) REFERENCES Fotografo (cpf)
+);
