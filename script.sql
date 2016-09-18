@@ -193,7 +193,8 @@ INTO Pessoa VALUES ('684997235-01', 'João Silva',       TO_DATE('10/07/1980', '
 INTO Pessoa VALUES ('234908724-88', 'Vitor Pereira',    TO_DATE('15/12/1995', 'dd/MM/yyyy'), 'M', '23456000', 'Recife',         'Bairro do Caxanga',    'Avenida Caxangá',      '230'   )
 INTO Pessoa VALUES ('171615142-21', 'Amanda Kezia',     TO_DATE('23/10/1994', 'dd/MM/yyyy'), 'F', '77800000', 'Recife',         'Várzea',               'João F. Lisboa',       '120'   )
 INTO Pessoa VALUES ('881391402-21', 'Letícia Silva',    TO_DATE('01/11/1980', 'dd/MM/yyyy'), 'F', '99134817', 'Fortaleza',      'Padre Miguel',         'Marechal Deodoro',     '23'    )
-INTO Pessoa VALUES ('143234503-91', 'Cláudio Roberto',  TO_DATE('09/10/1977', 'dd/MM/yyyy'), 'M', '88123491', 'Caruaru',        'Centro',               'Agamenon Magalhães'    '23'    )
+INTO Pessoa VALUES ('143234503-91', 'Cláudio Roberto',  TO_DATE('09/10/1977', 'dd/MM/yyyy'), 'M', '88123491', 'Caruaru',        'Centro',               'Agamenon Magalhães',    '23'   )
+INTO Pessoa VALUES ('144319847-45', 'Antônio Flávio',   TO_DATE('08/03/1990', 'dd/MM/yyyy'), 'M', '23495302', 'Palmas',         'Floresta',             'Prefeito Miguel',      '621'   )
 SELECT 1 FROM DUAL;
 
 -- 2.2 Telefone
