@@ -1,0 +1,15 @@
+DROP TABLE Evento;
+DROP TABLE Foto;
+DROP TABLE Ganha;
+DROP TABLE Premiacao;
+DROP TABLE JornTrabMateria;
+DROP TABLE Materia;
+DROP TABLE Secao;
+DROP TABLE Edicao;
+DROP TABLE Titulacao;
+DROP TABLE Jornalista;
+DROP TABLE Fotografo;
+DROP TABLE Assinante;
+DROP TABLE Funcionario;
+DROP TABLE Telefone;
+DROP TABLE Pessoa;

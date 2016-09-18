@@ -127,9 +127,9 @@ CREATE TABLE Materia (
 CREATE TABLE JornTrabMateria (
 	cpf varchar2(15),
 	id_materia integer,
-	CONSTRAINT jorntabmateria_pkey PRIMARY KEY (cpf, id_materia),
-	CONSTRAINT jorntabmateria_jornalista_fkey1 FOREIGN KEY (cpf) REFERENCES Jornalista (cpf),
-	CONSTRAINT jorntabmateria_materia_fkey2 FOREIGN KEY (id_materia) REFERENCES Materia (id)
+	CONSTRAINT jorntab_pkey PRIMARY KEY (cpf, id_materia),
+	CONSTRAINT jorntab_jornalista_fkey1 FOREIGN KEY (cpf) REFERENCES Jornalista (cpf),
+	CONSTRAINT jorntab_materia_fkey2 FOREIGN KEY (id_materia) REFERENCES Materia (id)
 );
 
 -- 1.12 Premiação
