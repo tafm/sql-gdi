@@ -52,7 +52,7 @@ CREATE TABLE Assinante (
 	plano varchar2(50) NOT NULL,
 	dataAssinatura date NOT NULL,
 	CONSTRAINT assinante_pkey PRIMARY KEY (cpf),
-    CONSTRAINT assinante_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf),
+	CONSTRAINT assinante_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf),
 	CONSTRAINT assinante_plano_fkey2 FOREIGN KEY (plano) REFERENCES Plano (descricao)
 );
 
@@ -229,7 +229,22 @@ SELECT 1 FROM DUAL;
 -- 2.3 Plano
 
 INSERT ALL
-INTO Plano VALUES ('Básico', 10.00)
-INTO Plano VALUES ('Combo', 15.00)
-INTO Plano VALUES ('Ultra', 20.00)
+INTO Plano VALUES ('Básico',    10.00)
+INTO Plano VALUES ('Combo',     15.00)
+INTO Plano VALUES ('Ultra',     20.00)
+SELECT 1 FROM DUAL;
+
+-- 2.4 Assinante
+
+INSERT ALL
+INTO Assinante VALUES ('123456789-45', 'Combo',   TO_DATE('05/04/2013', 'dd/MM/yyyy'))
+INTO Assinante VALUES ('888777666-85', 'Básico',  TO_DATE('12/09/2015', 'dd/MM/yyyy'))
+INTO Assinante VALUES ('456228741-99', 'Básico',  TO_DATE('27/01/2010', 'dd/MM/yyyy'))
+INTO Assinante VALUES ('648752006-56', 'Ultra',   TO_DATE('15/06/2012', 'dd/MM/yyyy'))
+INTO Assinante VALUES ('160742365-48', 'Básico',  TO_DATE('01/12/2012', 'dd/MM/yyyy'))
+INTO Assinante VALUES ('283492009-11', 'Básico',  TO_DATE('21/02/2008', 'dd/MM/yyyy'))
+INTO Assinante VALUES ('945632778-12', 'Básico',  TO_DATE('07/10/2016', 'dd/MM/yyyy'))
+INTO Assinante VALUES ('549316775-00', 'Combo',   TO_DATE('20/07/2011', 'dd/MM/yyyy'))
+INTO Assinante VALUES ('654823004-11', 'Combo',   TO_DATE('16/01/2015', 'dd/MM/yyyy'))
+INTO Assinante VALUES ('684997235-01', 'Ultra',   TO_DATE('23/05/2014', 'dd/MM/yyyy'))
 SELECT 1 FROM DUAL;
