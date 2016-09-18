@@ -37,17 +37,26 @@ CREATE TABLE Telefone (
 	CONSTRAINT pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf)
 );
 
--- 1.3 Assinante
+-- 1.3 Plano
+
+CREATE TABLE Plano (
+    descricao varchar2(50),
+    preco number(5,2) NOT NULL,
+    CONSTRAINT plano_pkey PRIMARY KEY (descricao)
+);
+
+-- 1.4 Assinante
 
 CREATE TABLE Assinante (
 	cpf varchar2(15),
-	planoAssinatura varchar2(50) NOT NULL,
+	plano varchar2(50) NOT NULL,
 	dataAssinatura date NOT NULL,
-	CONSTRAINT assinante_pkey1 PRIMARY KEY (cpf),
-	CONSTRAINT assinante_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf)
+	CONSTRAINT assinante_pkey PRIMARY KEY (cpf),
+    CONSTRAINT assinante_pessoa_fkey1 FOREIGN KEY (cpf) REFERENCES Pessoa (cpf),
+	CONSTRAINT assinante_plano_fkey2 FOREIGN KEY (plano) REFERENCES Plano (descricao)
 );
 
--- 1.4 Funcionário
+-- 1.5 Funcionário
 
 CREATE TABLE Funcionario (
 	cpf varchar2(15),
@@ -58,7 +67,7 @@ CREATE TABLE Funcionario (
 	CONSTRAINT Funcionario_checkSal CHECK (salario >= 880.00)
 );
 
--- 1.5 Fotografo
+-- 1.6 Fotografo
 
 CREATE TABLE Fotografo (
 	cpf varchar2(15),
@@ -67,7 +76,7 @@ CREATE TABLE Fotografo (
 	CONSTRAINT fotografo_funcionario_fkey1 FOREIGN KEY (cpf) REFERENCES Funcionario (cpf)
 );
 
--- 1.6 Jornalista
+-- 1.7 Jornalista
 
 CREATE TABLE Jornalista (
 	cpf varchar2(15),
@@ -78,7 +87,7 @@ CREATE TABLE Jornalista (
 	CONSTRAINT jornalista_fkey1 FOREIGN KEY (cpf_supervisor) REFERENCES Jornalista (cpf)
 );
 
--- 1.7 Titulação
+-- 1.8 Titulação
 
 CREATE TABLE Titulacao (
 	cpf varchar2(15),
@@ -88,7 +97,7 @@ CREATE TABLE Titulacao (
 	CONSTRAINT titulacao_jornalista_fkey1 FOREIGN KEY (cpf) REFERENCES Jornalista (cpf)  
 );
 
--- 1.8 Edição
+-- 1.9 Edição
 
 CREATE TABLE Edicao (
 	numero integer,
@@ -98,7 +107,7 @@ CREATE TABLE Edicao (
 	CONSTRAINT edicao_jornalista_fkey1 FOREIGN KEY (cpf_chefe) REFERENCES Jornalista (cpf)
 );
 
--- 1.9 Seção
+-- 1.10 Seção
 
 CREATE TABLE Secao (
 	nome varchar2(30),
@@ -107,7 +116,7 @@ CREATE TABLE Secao (
 	CONSTRAINT secao_jornalista_fkey1 FOREIGN KEY (cpf_coord) REFERENCES Jornalista (cpf)
 );
 
--- 1.10 Matéria
+-- 1.11 Matéria
 
 CREATE TABLE Materia (
 	id integer,
@@ -122,7 +131,7 @@ CREATE TABLE Materia (
 	CONSTRAINT materia_secao_fkey2 FOREIGN KEY (secao) REFERENCES Secao (nome)
  );
 
--- 1.11 Jornalista <escreve> Matéria
+-- 1.12 Jornalista <escreve> Matéria
 
 CREATE TABLE JornTrabMateria (
 	cpf varchar2(15),
@@ -132,7 +141,7 @@ CREATE TABLE JornTrabMateria (
 	CONSTRAINT jorntab_materia_fkey2 FOREIGN KEY (id_materia) REFERENCES Materia (id)
 );
 
--- 1.12 Premiação
+-- 1.13 Premiação
 
 CREATE TABLE Premiacao (
 	evento varchar2(50),
@@ -141,7 +150,7 @@ CREATE TABLE Premiacao (
 	CONSTRAINT Premiacao_pkey PRIMARY KEY (evento, data)
 );
 
--- 1.13 (Jornalista <escreve> Matéria) <ganha> Premiação
+-- 1.14 (Jornalista <escreve> Matéria) <ganha> Premiação
 
 CREATE TABLE Ganha (
 	cpf varchar2(15),
@@ -153,7 +162,7 @@ CREATE TABLE Ganha (
 	CONSTRAINT ganha_premiacao_fkey2 FOREIGN KEY (evento, data) REFERENCES Premiacao (evento, data)
 );
 
--- 1.14 Fotos
+-- 1.15 Fotos
 
 CREATE TABLE Foto (
 	id integer,
@@ -165,7 +174,7 @@ CREATE TABLE Foto (
 	CONSTRAINT foto_materia_fkey2 FOREIGN KEY (materia) REFERENCES Materia (id)
 );
 
--- 1.15 Evento
+-- 1.16 Evento
 
 CREATE TABLE Evento (
 	nome varchar2(50),
