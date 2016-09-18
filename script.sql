@@ -24,8 +24,8 @@ CREATE TABLE Pessoa (
 	bairro varchar2(50) NOT NULL,
 	rua varchar2(50) NOT NULL,
 	numero varchar2(20) NOT NULL,
-	CONSTRAINT Pessoa_pkey PRIMARY KEY (cpf),
-	CONSTRAINT Pessoa_checkSexo CHECK (sexo In ('M', 'F'))
+	CONSTRAINT pessoa_pkey PRIMARY KEY (cpf),
+	CONSTRAINT pessoa_checkSexo CHECK (sexo In ('M', 'F'))
 );
 
 -- 1.2 Telefone
@@ -113,7 +113,7 @@ CREATE TABLE Materia (
 	id integer,
 	secao varchar2(30),
 	edicao integer,
-	titulo CLOB NOT NULL,
+	titulo varchar2(255) NOT NULL,
 	data date NOT NULL,
 	conteudo CLOB,
 	anexos CLOB,
@@ -151,4 +151,15 @@ CREATE TABLE Ganha (
 	CONSTRAINT ganha_pkey PRIMARY KEY (cpf, id_materia, evento),
 	CONSTRAINT ganha_jortrabmateria_fkey1 FOREIGN KEY (cpf, id_materia) REFERENCES JornTrabMateria (cpf, id_materia),
 	CONSTRAINT ganha_premiacao_fkey2 FOREIGN KEY (evento, data) REFERENCES Premiacao (evento, data)
+);
+
+-- 1.14 Fotos
+
+CREATE TABLE Foto (
+	id integer,
+	fotografo varchar2(15),
+	materia integer,
+	CONSTRAINT foto_pkey PRIMARY KEY (id),
+	CONSTRAINT foto_fotografo_fkey1 FOREIGN KEY (cpf) REFERENCES Fotografo (cpf),
+	CONSTRAINT fotos_materia_fkey2 FOREIGN KEY (materia) REFERENCES Materia (cpf)
 );
