@@ -40,9 +40,9 @@ CREATE TABLE Telefone (
 -- 1.3 Plano
 
 CREATE TABLE Plano (
-    descricao varchar2(50),
-    preco number(5,2) NOT NULL,
-    CONSTRAINT plano_pkey PRIMARY KEY (descricao)
+	descricao varchar2(50),
+	preco number(5,2) NOT NULL,
+	CONSTRAINT plano_pkey PRIMARY KEY (descricao)
 );
 
 -- 1.4 Assinante
@@ -219,8 +219,6 @@ INTO Pessoa VALUES ('456987415-44', 'Roberta Gomes',        TO_DATE('01/01/1944'
 INTO Pessoa VALUES ('785441365-99', 'Marcelo Resende',      TO_DATE('02/03/1955', 'dd/MM/yyyy'), 'M', '45699822', 'Porto Alegre',   'Carvalhada',           'Av.Eduardo Prado',     '425'   )
 INTO Pessoa VALUES ('548662300-11', 'Edinanci Gomes',       TO_DATE('06/08/1982', 'dd/MM/yyyy'), 'F', '45698520', 'Porto Alegre',   'Boa Vista',            'Av.Nilo Peçanha',      '2131'  )
 INTO Pessoa VALUES ('569552330-32', 'Amanda Freitas',       TO_DATE('22/12/1974', 'dd/MM/yyyy'), 'F', '32145874', 'Porto Alegre',   'Praia de Belas',       'Praia de Belas',       '1181'  )
-
-
 SELECT 1 FROM DUAL;
 
 -- 2.2 Telefone
@@ -284,7 +282,6 @@ INTO Funcionario VALUES ('456987415-44', 1650.00, TO_DATE('05/10/2011', 'dd/MM/y
 INTO Funcionario VALUES ('785441365-99', 1700.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
 INTO Funcionario VALUES ('548662300-11', 1900.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
 INTO Funcionario VALUES ('569552330-32', 1650.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
-
 SELECT 1 FROM DUAL;
 
 -- 2.6 Fotógrafo
