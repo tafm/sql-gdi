@@ -208,7 +208,7 @@ INTO Pessoa VALUES ('238432464-99', 'Priscila Alcântara',   TO_DATE('25/06/1979
 INTO Pessoa VALUES ('234353455-44', 'Maria Aparecida',      TO_DATE('20/09/1960', 'dd/MM/yyyy'), 'F', '14124984', 'Porto Alegre',   'Conde Boa Vista',      'Mariano Amaro',        '21'    )
 INTO Pessoa VALUES ('893451348-30', 'Renato Arruda',        TO_DATE('30/03/1990', 'dd/MM/yyyy'), 'M', '82886234', 'São Paulo',      'Cracolândia',          'Rua da Neblina',       '66'    )
 INTO Pessoa VALUES ('635752445-80', 'Ricardo Junior',       TO_DATE('05/12/1972', 'dd/MM/yyyy'), 'M', '23476784', 'Rio de Janeiro', 'Nova Morada',          'Teófilo Antônio',      '99'    )
-INTO Pessoa VALUES ('353234979-23', 'Regina Oliveira',      TO_DATE('38/08/1996', 'dd/MM/yyyy'), 'F', '82346248', 'Santos',         'Litoral',              'Av. Mascarenhas',      '806'   )
+INTO Pessoa VALUES ('353234979-23', 'Regina Oliveira',      TO_DATE('10/08/1996', 'dd/MM/yyyy'), 'F', '82346248', 'Santos',         'Litoral',              'Av. Mascarenhas',      '806'   )
 SELECT 1 FROM DUAL;
 
 -- 2.2 Telefone
@@ -247,4 +247,34 @@ INTO Assinante VALUES ('945632778-12', 'Básico',  TO_DATE('07/10/2016', 'dd/MM/
 INTO Assinante VALUES ('549316775-00', 'Combo',   TO_DATE('20/07/2011', 'dd/MM/yyyy'))
 INTO Assinante VALUES ('654823004-11', 'Combo',   TO_DATE('16/01/2015', 'dd/MM/yyyy'))
 INTO Assinante VALUES ('684997235-01', 'Ultra',   TO_DATE('23/05/2014', 'dd/MM/yyyy'))
+SELECT 1 FROM DUAL;
+
+-- 2.5 Funcionário
+
+INSERT ALL
+INTO Funcionario VALUES ('234908724-88', 1500.00, TO_DATE('13/10/2014', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('171615142-21', 1450.00, TO_DATE('30/11/2015', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('881391402-21', 1600.00, TO_DATE('20/02/2014', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('143234503-91', 2000.00, TO_DATE('29/08/2012', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('144319847-45', 1400.00, TO_DATE('06/01/2016', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('238432464-99', 1500.00, TO_DATE('25/10/2012', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('234353455-44', 1650.00, TO_DATE('09/03/2012', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('893451348-30', 1800.00, TO_DATE('12/05/2013', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('635752445-80', 1900.00, TO_DATE('18/12/2013', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('353234979-23', 1760.00, TO_DATE('24/07/2014', 'dd/MM/yyyy'))
+SELECT 1 FROM DUAL;
+
+-- 2.6 Fotógrafo
+
+INSERT ALL
+INTO Fotografo VALUES ('234908724-88', NULL)
+INTO Fotografo VALUES ('171615142-21', NULL)
+INTO Fotografo VALUES ('881391402-21', NULL)
+INTO Fotografo VALUES ('143234503-91', NULL)
+INTO Fotografo VALUES ('144319847-45', NULL)
+INTO Fotografo VALUES ('238432464-99', NULL)
+INTO Fotografo VALUES ('234353455-44', NULL)
+INTO Fotografo VALUES ('893451348-30', NULL)
+INTO Fotografo VALUES ('635752445-80', NULL)
+INTO Fotografo VALUES ('353234979-23', NULL)
 SELECT 1 FROM DUAL;
