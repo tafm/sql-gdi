@@ -209,6 +209,18 @@ INTO Pessoa VALUES ('234353455-44', 'Maria Aparecida',      TO_DATE('20/09/1960'
 INTO Pessoa VALUES ('893451348-30', 'Renato Arruda',        TO_DATE('30/03/1990', 'dd/MM/yyyy'), 'M', '82886234', 'São Paulo',      'Cracolândia',          'Rua da Neblina',       '66'    )
 INTO Pessoa VALUES ('635752445-80', 'Ricardo Junior',       TO_DATE('05/12/1972', 'dd/MM/yyyy'), 'M', '23476784', 'Rio de Janeiro', 'Nova Morada',          'Teófilo Antônio',      '99'    )
 INTO Pessoa VALUES ('353234979-23', 'Regina Oliveira',      TO_DATE('10/08/1996', 'dd/MM/yyyy'), 'F', '82346248', 'Santos',         'Litoral',              'Av. Mascarenhas',      '806'   )
+INTO Pessoa VALUES ('658775462-03', 'Catarina Abreu',       TO_DATE('30/02/1988', 'dd/MM/yyyy'), 'F', '35741200', 'Fortaleza',      'Meireles',             'Rua Oswaldo Cruz',     '1'     )
+INTO Pessoa VALUES ('782662490-13', 'Alberto Maia',         TO_DATE('13/12/1977', 'dd/MM/yyyy'), 'M', '60160230', 'Fortaleza',      'Aldeota',              'Av.Don Luis',          '1200'  )
+INTO Pessoa VALUES ('665482660-02', 'Francisco Cunha',      TO_DATE('02/08/1968', 'dd/MM/yyyy'), 'M', '96578266', 'Manaus',         'Adrianópolis',         'Av.Mario Ypiranga',    '1300'  )
+INTO Pessoa VALUES ('554826331-22', 'Julia Andrade',        TO_DATE('03/02/1998', 'dd/MM/yyyy'), 'F', '56475300', 'Manaus',         'Japiim',               'Rua Santa Luzia',      '438'   )
+INTO Pessoa VALUES ('785663215-00', 'Roberto Santos',       TO_DATE('16/07/1973', 'dd/MM/yyyy'), 'M', '06955712', 'João Pessoa',    'Tambaú',               'Av.Rui Carneiro',      '232'   )
+INTO Pessoa VALUES ('153664872-66', 'Robin Wood',           TO_DATE('06/12/1939', 'dd/MM/yyyy'), 'M', '32654788', 'Rondonia',       'Flodoaldo Pinto',      'Av.Rio Madeira',       '3288'  )
+INTO Pessoa VALUES ('456987415-44', 'Roberta Gomes',        TO_DATE('01/01/1944', 'dd/MM/yyyy'), 'F', '45987455', 'São Luis',       'Jaracati',             'Av.Prof.Carlos Cunha', '1000'  )
+INTO Pessoa VALUES ('785441365-99', 'Marcelo Resende',      TO_DATE('02/03/1955', 'dd/MM/yyyy'), 'M', '45699822', 'Porto Alegre',   'Carvalhada',           'Av.Eduardo Prado',     '425'   )
+INTO Pessoa VALUES ('548662300-11', 'Edinanci Gomes',       TO_DATE('06/08/1982', 'dd/MM/yyyy'), 'F', '45698520', 'Porto Alegre',   'Boa Vista',            'Av.Nilo Peçanha',      '2131'  )
+INTO Pessoa VALUES ('569552330-32', 'Amanda Freitas',       TO_DATE('22/12/1974', 'dd/MM/yyyy'), 'F', '32145874', 'Porto Alegre',   'Praia de Belas',       'Praia de Belas',       '1181'  )
+
+
 SELECT 1 FROM DUAL;
 
 -- 2.2 Telefone
@@ -262,6 +274,17 @@ INTO Funcionario VALUES ('234353455-44', 1650.00, TO_DATE('09/03/2012', 'dd/MM/y
 INTO Funcionario VALUES ('893451348-30', 1800.00, TO_DATE('12/05/2013', 'dd/MM/yyyy'))
 INTO Funcionario VALUES ('635752445-80', 1900.00, TO_DATE('18/12/2013', 'dd/MM/yyyy'))
 INTO Funcionario VALUES ('353234979-23', 1760.00, TO_DATE('24/07/2014', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('658775462-03', 1600.00, TO_DATE('15/08/2014', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('782662490-13', 1000.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('665482660-02', 1250.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('554826331-22', 2000.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('785663215-00', 1950.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('153664872-66', 1550.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('456987415-44', 1650.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('785441365-99', 1700.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('548662300-11', 1900.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('569552330-32', 1650.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
+
 SELECT 1 FROM DUAL;
 
 -- 2.6 Fotógrafo
