@@ -170,7 +170,7 @@ CREATE SEQUENCE ID_PREMIACAO
 ;
 
 CREATE TABLE Premiacao (
-    id integer,
+	id integer,
 	evento varchar2(50) NOT NULL,
 	data date NOT NULL,
 	categoria varchar2(50),
@@ -350,6 +350,15 @@ INTO Jornalista VALUES ('569552330-32', '05235/25/67/AC', '456987415-44')
 SELECT 1 FROM DUAL;
 
 -- 2.8 Titulação
+
+INSERT ALL
+INTO Titulacao VALUES ('658775462-03', TO_DATE('22/04/1979','dd/MM/yyyy') , 'Universidade Federal de Pernambuco'            , 'Bacharelado'  )
+INTO Titulacao VALUES ('782662490-13', TO_DATE('30/10/1984','dd/MM;yyyy') , 'Universidade Estadual de São Paulo'            , 'Mestrado'     )
+INTO Titulacao VALUES ('665482660-02', TO_DATE('25/12/2000','dd/MM/yyyy') , 'Universidade Federal do Rio de Janeiro'        , 'Bacharelado'  )
+INTO Titulacao VALUES ('554826331-22', TO_DATE('07/09/1996','dd/MM/yyyy') , 'Universidade Católica de Pernambuco'           , 'Bacharelado'  )
+INTO Titulacao VALUES ('785663215-00', TO_DATE('01/04/1986','dd/MM/yyyy') , 'Pontifícia Universidade Católica de São Paulo' , 'Bacharelado'  )
+INTO Titulacao VALUES ('153664872-66', TO_DATE('06/10/1991','dd/MM/yyyy') , 'Universidade Federal de Pernambuco'            , 'Mestrado'     )
+SELECT 1 FROM DUAL
 
 -- 2.9 Edição
 
