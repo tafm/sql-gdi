@@ -99,6 +99,15 @@ CREATE TABLE Titulacao (
 
 -- 1.9 Edição
 
+CREATE SEQUENCE ID_EDICAO
+    minvalue 1
+    maxvalue 9999999999
+    start with 1
+    increment by 1
+    nocache
+    cycle
+;
+
 CREATE TABLE Edicao (
 	numero integer,
 	cpf_chefe varchar2(15),
@@ -117,6 +126,15 @@ CREATE TABLE Secao (
 );
 
 -- 1.11 Matéria
+
+CREATE SEQUENCE ID_MATERIA
+    minvalue 1
+    maxvalue 9999999999
+    start with 1
+    increment by 1
+    nocache
+    cycle
+;
 
 CREATE TABLE Materia (
 	id integer,
@@ -142,23 +160,32 @@ CREATE TABLE JornTrabMateria (
 
 -- 1.13 Premiação
 
+CREATE SEQUENCE ID_PREMIACAO
+    minvalue 1
+    maxvalue 9999999999
+    start with 1
+    increment by 1
+    nocache
+    cycle
+;
+
 CREATE TABLE Premiacao (
-	evento varchar2(50),
+    id integer,
+	evento varchar2(50) NOT NULL,
 	data date NOT NULL,
 	categoria varchar2(50),
-	CONSTRAINT Premiacao_pkey PRIMARY KEY (evento, data)
+	CONSTRAINT Premiacao_pkey PRIMARY KEY (id)
 );
 
 -- 1.14 (Jornalista <escreve> Matéria) <ganha> Premiação
 
 CREATE TABLE Ganha (
+	premiacao integer,
 	cpf varchar2(15),
 	id_materia integer,
-	evento varchar2(50),
-	data date,
-	CONSTRAINT ganha_pkey PRIMARY KEY (cpf, id_materia, evento),
-	CONSTRAINT ganha_jortrabmateria_fkey1 FOREIGN KEY (cpf, id_materia) REFERENCES JornTrabMateria (cpf, id_materia),
-	CONSTRAINT ganha_premiacao_fkey2 FOREIGN KEY (evento, data) REFERENCES Premiacao (evento, data)
+	CONSTRAINT ganha_pkey PRIMARY KEY (cpf, id_materia),
+	CONSTRAINT ganha_premiacao_fkey1 FOREIGN KEY (premiacao) REFERENCES Premiacao (id),
+	CONSTRAINT ganha_jortrabmateria_fkey2 FOREIGN KEY (cpf, id_materia) REFERENCES JornTrabMateria (cpf, id_materia)
 );
 
 -- 1.15 Fotos
@@ -317,18 +344,16 @@ SELECT 1 FROM DUAL;
 
 -- 2.9 Edição
 
-INSERT ALL
-INTO Edicao VALUES (1,     '554826331-22', TO_DATE('01/04/2014', 'dd/MM/yyyy'))
-INTO Edicao VALUES (2,     '456987415-44', TO_DATE('02/04/2014', 'dd/MM/yyyy'))
-INTO Edicao VALUES (3,     '456987415-44', TO_DATE('03/04/2014', 'dd/MM/yyyy'))
-INTO Edicao VALUES (4,     '456987415-44', TO_DATE('04/04/2014', 'dd/MM/yyyy'))
-INTO Edicao VALUES (5,     '554826331-22', TO_DATE('05/04/2014', 'dd/MM/yyyy'))
-INTO Edicao VALUES (6,     '456987415-44', TO_DATE('06/04/2014', 'dd/MM/yyyy'))
-INTO Edicao VALUES (7,     '554826331-22', TO_DATE('07/04/2014', 'dd/MM/yyyy'))
-INTO Edicao VALUES (8,     '554826331-22', TO_DATE('08/04/2014', 'dd/MM/yyyy'))
-INTO Edicao VALUES (9,     '554826331-22', TO_DATE('09/04/2014', 'dd/MM/yyyy'))
-INTO Edicao VALUES (10,    '456987415-44', TO_DATE('10/04/2014', 'dd/MM/yyyy'))
-SELECT 1 FROM DUAL;
+INSERT INTO Edicao VALUES (ID_EDICAO.Nextval,   '554826331-22', TO_DATE('01/04/2014', 'dd/MM/yyyy'));
+INSERT INTO Edicao VALUES (ID_EDICAO.Nextval,   '456987415-44', TO_DATE('02/04/2014', 'dd/MM/yyyy'));
+INSERT INTO Edicao VALUES (ID_EDICAO.Nextval,   '456987415-44', TO_DATE('03/04/2014', 'dd/MM/yyyy'));
+INSERT INTO Edicao VALUES (ID_EDICAO.Nextval,   '456987415-44', TO_DATE('04/04/2014', 'dd/MM/yyyy'));
+INSERT INTO Edicao VALUES (ID_EDICAO.Nextval,   '554826331-22', TO_DATE('05/04/2014', 'dd/MM/yyyy'));
+INSERT INTO Edicao VALUES (ID_EDICAO.Nextval,   '456987415-44', TO_DATE('06/04/2014', 'dd/MM/yyyy'));
+INSERT INTO Edicao VALUES (ID_EDICAO.Nextval,   '554826331-22', TO_DATE('07/04/2014', 'dd/MM/yyyy'));
+INSERT INTO Edicao VALUES (ID_EDICAO.Nextval,   '554826331-22', TO_DATE('08/04/2014', 'dd/MM/yyyy'));
+INSERT INTO Edicao VALUES (ID_EDICAO.Nextval,   '554826331-22', TO_DATE('09/04/2014', 'dd/MM/yyyy'));
+INSERT INTO Edicao VALUES (ID_EDICAO.Nextval,   '456987415-44', TO_DATE('10/04/2014', 'dd/MM/yyyy'));
 
 -- 2.10 Seção
 
@@ -343,18 +368,16 @@ SELECT 1 FROM DUAL;
 
 -- 2.11 Matéria
 
-INSERT ALL
-INTO Materia VALUES (1, 'Esportes',     1, 'Vasco perde e é vice novamente',                NULL, NULL)
-INTO Materia VALUES (2, 'Policial',     1, 'Traficante é encontrado morto',                 NULL, NULL)
-INTO Materia VALUES (3, 'Famosos',      2, 'Silvio Santos casa com Elen',                   NULL, NULL)
-INTO Materia VALUES (4, 'Cultura',      2, 'Filme Aquarius estreia no cinema',              NULL, NULL)
-INTO Materia VALUES (5, 'Política',     3, 'Cunha disputará segundo turno com Bolsonaro',   NULL, NULL)
-INTO Materia VALUES (6, 'Famosos',      4, 'Ana Maria Braga engordou 0.4 kg',               NULL, NULL)
-INTO Materia VALUES (7, 'Esportes',     5, 'Santa Cruz avança na sulamericana',             NULL, NULL)
-INTO Materia VALUES (8, 'Política',     5, 'Nova capa da Veja trás denúncia contra Lula',   NULL, NULL)
-INTO Materia VALUES (9, 'Economia',     6, 'China lança nova moeda',                        NULL, NULL)
-INTO Materia VALUES (10,'Economia',     7, 'Bitcoin sobe 20% em uma semana',                NULL, NULL)
-SELECT 1 FROM DUAL;
+INSERT INTO Materia VALUES (ID_MATERIA.Nextval, 'Esportes',     1, 'Vasco perde e é vice novamente',                NULL, NULL);
+INSERT INTO Materia VALUES (ID_MATERIA.Nextval, 'Policial',     1, 'Traficante é encontrado morto',                 NULL, NULL);
+INSERT INTO Materia VALUES (ID_MATERIA.Nextval, 'Famosos',      2, 'Silvio Santos casa com Elen',                   NULL, NULL);
+INSERT INTO Materia VALUES (ID_MATERIA.Nextval, 'Cultura',      2, 'Filme Aquarius estreia no cinema',              NULL, NULL);
+INSERT INTO Materia VALUES (ID_MATERIA.Nextval, 'Política',     3, 'Cunha disputará segundo turno com Bolsonaro',   NULL, NULL);
+INSERT INTO Materia VALUES (ID_MATERIA.Nextval, 'Famosos',      4, 'Ana Maria Braga engordou 0.4 kg',               NULL, NULL);
+INSERT INTO Materia VALUES (ID_MATERIA.Nextval, 'Esportes',     5, 'Santa Cruz avança na sulamericana',             NULL, NULL);
+INSERT INTO Materia VALUES (ID_MATERIA.Nextval, 'Política',     5, 'Nova capa da Veja trás denúncia contra Lula',   NULL, NULL);
+INSERT INTO Materia VALUES (ID_MATERIA.Nextval, 'Economia',     6, 'China lança nova moeda',                        NULL, NULL);
+INSERT INTO Materia VALUES (ID_MATERIA.Nextval,'Economia',     7, 'Bitcoin sobe 20% em uma semana',                NULL, NULL);
 
 -- 2.12 Jornalista <escreve> Matéria
 
@@ -373,3 +396,16 @@ INTO JornTrabMateria VALUES ('456987415-44', 8)
 INTO JornTrabMateria VALUES ('569552330-32', 9)
 INTO JornTrabMateria VALUES ('569552330-32', 10)
 SELECT 1 FROM DUAL;
+
+-- 2.13 Premiação
+
+INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'Pulitzer',    TO_DATE('07/09/2014', 'dd/MM/yyyy'), 'Melhor cobertura eleitoral'               );
+INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'Pulitzer',    TO_DATE('07/09/2014', 'dd/MM/yyyy'), 'Melhor matéria esportiva'                 );
+INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'Esso',        TO_DATE('02/01/2015', 'dd/MM/yyyy'), 'Contribuição investigativa'               );
+INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'Esso',        TO_DATE('02/01/2015', 'dd/MM/yyyy'), 'Emoção esportiva'                         );
+INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'Petrobras',   TO_DATE('25/07/2014', 'dd/MM/yyyy'), 'Premio de incentivo ao cinema nacional'   );
+INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'Petrobras',   TO_DATE('25/07/2014', 'dd/MM/yyyy'), 'Premio de imparcialidade política'        );
+INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'Fapeam',      TO_DATE('03/11/2014', 'dd/MM/yyyy'), 'Cobertura policial'                       );
+INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'Fapeam',      TO_DATE('03/11/2014', 'dd/MM/yyyy'), 'Economia'                                 );
+INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'MPT',         TO_DATE('15/10/2014', 'dd/MM/yyyy'), 'Melhor análise econômica'                 );
+INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'MPT',         TO_DATE('15/10/2014', 'dd/MM/yyyy'), 'Matéria mais divertida'                   );
