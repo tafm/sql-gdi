@@ -355,3 +355,21 @@ INTO Materia VALUES (8, 'Política',     5, 'Nova capa da Veja trás denúncia c
 INTO Materia VALUES (9, 'Economia',     6, 'China lança nova moeda',                        NULL, NULL)
 INTO Materia VALUES (10,'Economia',     7, 'Bitcoin sobe 20% em uma semana',                NULL, NULL)
 SELECT 1 FROM DUAL;
+
+-- 2.12 Jornalista <escreve> Matéria
+
+INSERT ALL
+INTO JornTrabMateria VALUES ('658775462-03', 1)
+INTO JornTrabMateria VALUES ('782662490-13', 1)
+INTO JornTrabMateria VALUES ('665482660-02', 2)
+INTO JornTrabMateria VALUES ('554826331-22', 3)
+INTO JornTrabMateria VALUES ('785663215-00', 4)
+INTO JornTrabMateria VALUES ('153664872-66', 5)
+INTO JornTrabMateria VALUES ('456987415-44', 5)
+INTO JornTrabMateria VALUES ('554826331-22', 6)
+INTO JornTrabMateria VALUES ('785441365-99', 6)
+INTO JornTrabMateria VALUES ('782662490-13', 7)
+INTO JornTrabMateria VALUES ('456987415-44', 8)
+INTO JornTrabMateria VALUES ('569552330-32', 9)
+INTO JornTrabMateria VALUES ('569552330-32', 10)
+SELECT 1 FROM DUAL;
