@@ -209,7 +209,7 @@ INTO Pessoa VALUES ('234353455-44', 'Maria Aparecida',      TO_DATE('20/09/1960'
 INTO Pessoa VALUES ('893451348-30', 'Renato Arruda',        TO_DATE('30/03/1990', 'dd/MM/yyyy'), 'M', '82886234', 'São Paulo',      'Cracolândia',          'Rua da Neblina',       '66'    )
 INTO Pessoa VALUES ('635752445-80', 'Ricardo Junior',       TO_DATE('05/12/1972', 'dd/MM/yyyy'), 'M', '23476784', 'Rio de Janeiro', 'Nova Morada',          'Teófilo Antônio',      '99'    )
 INTO Pessoa VALUES ('353234979-23', 'Regina Oliveira',      TO_DATE('10/08/1996', 'dd/MM/yyyy'), 'F', '82346248', 'Santos',         'Litoral',              'Av. Mascarenhas',      '806'   )
-INTO Pessoa VALUES ('658775462-03', 'Catarina Abreu',       TO_DATE('30/02/1988', 'dd/MM/yyyy'), 'F', '35741200', 'Fortaleza',      'Meireles',             'Rua Oswaldo Cruz',     '1'     )
+INTO Pessoa VALUES ('658775462-03', 'Catarina Abreu',       TO_DATE('28/02/1988', 'dd/MM/yyyy'), 'F', '35741200', 'Fortaleza',      'Meireles',             'Rua Oswaldo Cruz',     '1'     )
 INTO Pessoa VALUES ('782662490-13', 'Alberto Maia',         TO_DATE('13/12/1977', 'dd/MM/yyyy'), 'M', '60160230', 'Fortaleza',      'Aldeota',              'Av.Don Luis',          '1200'  )
 INTO Pessoa VALUES ('665482660-02', 'Francisco Cunha',      TO_DATE('02/08/1968', 'dd/MM/yyyy'), 'M', '96578266', 'Manaus',         'Adrianópolis',         'Av.Mario Ypiranga',    '1300'  )
 INTO Pessoa VALUES ('554826331-22', 'Julia Andrade',        TO_DATE('03/02/1998', 'dd/MM/yyyy'), 'F', '56475300', 'Manaus',         'Japiim',               'Rua Santa Luzia',      '438'   )
@@ -275,10 +275,10 @@ INTO Funcionario VALUES ('353234979-23', 1760.00, TO_DATE('24/07/2014', 'dd/MM/y
 INTO Funcionario VALUES ('658775462-03', 1600.00, TO_DATE('15/08/2014', 'dd/MM/yyyy'))
 INTO Funcionario VALUES ('782662490-13', 1000.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
 INTO Funcionario VALUES ('665482660-02', 1250.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
-INTO Funcionario VALUES ('554826331-22', 2000.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('554826331-22', 3000.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
 INTO Funcionario VALUES ('785663215-00', 1950.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
 INTO Funcionario VALUES ('153664872-66', 1550.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
-INTO Funcionario VALUES ('456987415-44', 1650.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
+INTO Funcionario VALUES ('456987415-44', 4650.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
 INTO Funcionario VALUES ('785441365-99', 1700.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
 INTO Funcionario VALUES ('548662300-11', 1900.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
 INTO Funcionario VALUES ('569552330-32', 1650.00, TO_DATE('05/10/2011', 'dd/MM/yyyy'))
@@ -297,4 +297,19 @@ INTO Fotografo VALUES ('234353455-44', NULL)
 INTO Fotografo VALUES ('893451348-30', NULL)
 INTO Fotografo VALUES ('635752445-80', NULL)
 INTO Fotografo VALUES ('353234979-23', NULL)
+SELECT 1 FROM DUAL;
+
+-- 2.7 Jornalista
+
+INSERT ALL
+INTO Jornalista VALUES ('658775462-03', '92425/12/43/SP', '554826331-22')
+INTO Jornalista VALUES ('782662490-13', '23490/01/65/RJ', '456987415-44')
+INTO Jornalista VALUES ('665482660-02', '38495/24/45/SP', '554826331-22')
+INTO Jornalista VALUES ('554826331-22', '22355/99/23/PE', '554826331-22')
+INTO Jornalista VALUES ('785663215-00', '28421/71/42/PE', '456987415-44')
+INTO Jornalista VALUES ('153664872-66', '20349/12/10/RS', '554826331-22')
+INTO Jornalista VALUES ('456987415-44', '09833/53/87/AL', '456987415-44')
+INTO Jornalista VALUES ('785441365-99', '83452/49/23/CE', '456987415-44')
+INTO Jornalista VALUES ('548662300-11', '35983/36/84/RN', '554826331-22')
+INTO Jornalista VALUES ('569552330-32', '05235/25/67/AC', '456987415-44')
 SELECT 1 FROM DUAL;
