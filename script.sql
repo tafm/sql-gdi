@@ -123,7 +123,6 @@ CREATE TABLE Materia (
 	secao varchar2(30),
 	edicao integer,
 	titulo varchar2(255) NOT NULL,
-	data date NOT NULL,
 	conteudo CLOB,
 	anexos CLOB,
 	CONSTRAINT materia_pkey PRIMARY KEY (id),
@@ -334,9 +333,25 @@ SELECT 1 FROM DUAL;
 -- 2.10 Seção
 
 INSERT ALL
-INTO Secao VALUES ('Esportes',    '782662490-13')
-INTO Secao VALUES ('Policial',    '554826331-22')
-INTO Secao VALUES ('Cultura',     '153664872-66')
-INTO Secao VALUES ('Política',    '785441365-99')
-INTO Secao VALUES ('Famosos',     '569552330-32')
+INTO Secao VALUES ('Esportes',      '782662490-13')
+INTO Secao VALUES ('Policial',      '554826331-22')
+INTO Secao VALUES ('Cultura',       '153664872-66')
+INTO Secao VALUES ('Política',      '785441365-99')
+INTO Secao VALUES ('Famosos',       '569552330-32')
+INTO Secao VALUES ('Economia',      '569552330-32')
+SELECT 1 FROM DUAL;
+
+-- 2.11 Matéria
+
+INSERT ALL
+INTO Materia VALUES (1, 'Esportes',     1, 'Vasco perde e é vice novamente',                NULL, NULL)
+INTO Materia VALUES (2, 'Policial',     1, 'Traficante é encontrado morto',                 NULL, NULL)
+INTO Materia VALUES (3, 'Famosos',      2, 'Silvio Santos casa com Elen',                   NULL, NULL)
+INTO Materia VALUES (4, 'Cultura',      2, 'Filme Aquarius estreia no cinema',              NULL, NULL)
+INTO Materia VALUES (5, 'Política',     3, 'Cunha disputará segundo turno com Bolsonaro',   NULL, NULL)
+INTO Materia VALUES (6, 'Famosos',      4, 'Ana Maria Braga engordou 0.4 kg',               NULL, NULL)
+INTO Materia VALUES (7, 'Esportes',     5, 'Santa Cruz avança na sulamericana',             NULL, NULL)
+INTO Materia VALUES (8, 'Política',     5, 'Nova capa da Veja trás denúncia contra Lula',   NULL, NULL)
+INTO Materia VALUES (9, 'Economia',     6, 'China lança nova moeda',                        NULL, NULL)
+INTO Materia VALUES (10,'Economia',     7, 'Bitcoin sobe 20% em uma semana',                NULL, NULL)
 SELECT 1 FROM DUAL;
