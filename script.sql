@@ -190,11 +190,20 @@ CREATE TABLE Ganha (
 
 -- 1.15 Fotos
 
+CREATE SEQUENCE ID_FOTO
+    minvalue 1
+    maxvalue 9999999999
+    start with 1
+    increment by 1
+    nocache
+    cycle
+;
+
 CREATE TABLE Foto (
 	id integer,
 	fotografo varchar2(15),
 	materia integer,
-	foto BLOB NOT NULL,
+	foto BLOB,
 	CONSTRAINT foto_pkey PRIMARY KEY (id),
 	CONSTRAINT foto_fotografo_fkey1 FOREIGN KEY (fotografo) REFERENCES Fotografo (cpf),
 	CONSTRAINT foto_materia_fkey2 FOREIGN KEY (materia) REFERENCES Materia (id)
@@ -409,3 +418,18 @@ INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'Fapeam',      TO_DATE('03/1
 INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'Fapeam',      TO_DATE('03/11/2014', 'dd/MM/yyyy'), 'Economia'                                 );
 INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'MPT',         TO_DATE('15/10/2014', 'dd/MM/yyyy'), 'Melhor análise econômica'                 );
 INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'MPT',         TO_DATE('15/10/2014', 'dd/MM/yyyy'), 'Matéria mais divertida'                   );
+
+-- 1.14 (Jornalista <escreve> Matéria) <ganha> Premiação
+
+-- 1.15 Foto
+
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '684997235-01', 1,  NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '684997235-01', 1,  NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '234908724-88', 2,  NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '234908724-88', 1,  NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '171615142-21', 3,  NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '171615142-21', 3,  NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '881391402-21', 3,  NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '143234503-91', 6,  NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '144319847-45', 10, NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '238432464-99', 8,  NULL);
