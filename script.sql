@@ -100,12 +100,12 @@ CREATE TABLE Titulacao (
 -- 1.9 Edição
 
 CREATE SEQUENCE ID_EDICAO
-    minvalue 1
-    maxvalue 9999999999
-    start with 1
-    increment by 1
-    nocache
-    cycle
+	minvalue 1
+	maxvalue 9999999999
+	start with 1
+	increment by 1
+	nocache
+	cycle
 ;
 
 CREATE TABLE Edicao (
@@ -128,12 +128,12 @@ CREATE TABLE Secao (
 -- 1.11 Matéria
 
 CREATE SEQUENCE ID_MATERIA
-    minvalue 1
-    maxvalue 9999999999
-    start with 1
-    increment by 1
-    nocache
-    cycle
+	minvalue 1
+	maxvalue 9999999999
+	start with 1
+	increment by 1
+	nocache
+	cycle
 ;
 
 CREATE TABLE Materia (
@@ -161,12 +161,12 @@ CREATE TABLE JornTrabMateria (
 -- 1.13 Premiação
 
 CREATE SEQUENCE ID_PREMIACAO
-    minvalue 1
-    maxvalue 9999999999
-    start with 1
-    increment by 1
-    nocache
-    cycle
+	minvalue 1
+	maxvalue 9999999999
+	start with 1
+	increment by 1
+	nocache
+	cycle
 ;
 
 CREATE TABLE Premiacao (
@@ -191,12 +191,12 @@ CREATE TABLE Ganha (
 -- 1.15 Fotos
 
 CREATE SEQUENCE ID_FOTO
-    minvalue 1
-    maxvalue 9999999999
-    start with 1
-    increment by 1
-    nocache
-    cycle
+	minvalue 1
+	maxvalue 9999999999
+	start with 1
+	increment by 1
+	nocache
+	cycle
 ;
 
 CREATE TABLE Foto (
@@ -423,13 +423,13 @@ INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'MPT',         TO_DATE('15/1
 
 -- 1.15 Foto
 
-INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '684997235-01', 1,  NULL);
-INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '684997235-01', 1,  NULL);
-INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '234908724-88', 2,  NULL);
 INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '234908724-88', 1,  NULL);
-INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '171615142-21', 3,  NULL);
-INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '171615142-21', 3,  NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '234908724-88', 1,  NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '171615142-21', 2,  NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '171615142-21', 1,  NULL);
 INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '881391402-21', 3,  NULL);
-INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '143234503-91', 6,  NULL);
-INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '144319847-45', 10, NULL);
-INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '238432464-99', 8,  NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '881391402-21', 3,  NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '143234503-91', 3,  NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '144319847-45', 6,  NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '238432464-99', 10, NULL);
+INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '234353455-44', 8,  NULL);
