@@ -330,3 +330,13 @@ INTO Edicao VALUES (8,     '554826331-22', TO_DATE('08/04/2014', 'dd/MM/yyyy'))
 INTO Edicao VALUES (9,     '554826331-22', TO_DATE('09/04/2014', 'dd/MM/yyyy'))
 INTO Edicao VALUES (10,    '456987415-44', TO_DATE('10/04/2014', 'dd/MM/yyyy'))
 SELECT 1 FROM DUAL;
+
+-- 2.10 Seção
+
+INSERT ALL
+INTO Secao VALUES ('Esportes',    '782662490-13')
+INTO Secao VALUES ('Policial',    '554826331-22')
+INTO Secao VALUES ('Cultura',     '153664872-66')
+INTO Secao VALUES ('Política',    '785441365-99')
+INTO Secao VALUES ('Famosos',     '569552330-32')
+SELECT 1 FROM DUAL;
