@@ -433,3 +433,93 @@ INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '881391402-21', 3,  NULL);
 INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '143234503-91', 6,  NULL);
 INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '144319847-45', 10, NULL);
 INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '238432464-99', 8,  NULL);
+
+
+-- 2.7 Foto
+
+INSERT ALL
+INTO Foto VALUES (1  , '234908724-88', 1 )
+INTO Foto VALUES (2  , '171615142-21', 6 )
+INTO Foto VALUES (3  , '881391402-21', 2 )
+INTO Foto VALUES (4  , '143234503-91', 9 )
+INTO Foto VALUES (5  , '888777666-85', 5 )
+INTO Foto VALUES (6  , '888777666-85', 4 )
+INTO Foto VALUES (7  , '123456789-45', 3 )
+INTO Foto VALUES (8  , '456228741-99', 7 )
+INTO Foto VALUES (9  , '456228741-99', 10)
+INTO Foto VALUES (10 , '160742365-48', 8 )
+SELECT 1 FROM DUAL;
+
+-- 2.8 Evento
+
+INSERT ALL
+INTO Evento VALUES ('Prêmio Gandhi de Comunicação'                  , TO DATE('01/01/2011' , 'dd/MM/yyyy') , 'Melhor Matéria do Ano'    )
+INTO Evento VALUES ('Prêmio Gandhi de Comunicação'                  , TO DATE('01/01/2011' , 'dd/MM/yyyy') , 'Melhor Jornalista do Ano' )
+INTO Evento VALUES ('Prêmio CNT de Jornalismo'                      , TO DATE('05/05/2016' , 'dd/MM/yyyy') , 'Melhor Matéria do Ano'    )
+INTO Evento VALUES ('Prêmio CNT de Jornalismo'                      , TO DATE('05/05/2016' , 'dd/MM/yyyy') , 'Melhor Jornalista do Ano' )
+INTO Evento VALUES ('Prêmio Chico Mendes Jornalismo Socioambiental' , TO DATE('22/12/2005' , 'dd/MM/yyyy') , 'Melhor Matéria do Ano'    )
+INTO Evento VALUES ('Prêmio Chico Mendes Jornalismo Socioambiental' , TO DATE('22/12/2005' , 'dd/MM/yyyy') , 'Melhor Jornalista do Ano' )
+SELECT 1 FROM DUAL
+
+ -- 2.9 Titulação
+
+INSERT ALL
+INTO Titulacao VALUES ('648752006-56', TO DATE('22/04/1979','dd/MM/yyyy') , 'Universidade Federal de Pernambuco'            , 'Bacharelado'  )
+INTO Titulacao VALUES ('648752006-56', TO DATE('30/10/1984','dd/MM;yyyy') , 'Universidade Estadual de São Paulo'            , 'Mestrado'     )
+INTO Titulacao VALUES ('283492009-11', TO DATE('25/12/2000','dd/MM/yyyy') , 'Universidade Federal do Rio de Janeiro'        , 'Bacharelado'  )
+INTO Titulacao VALUES ('945632778-12', TO DATE('07/09/1996','dd/MM/yyyy') , 'Universidade Católica de Pernambuco'           , 'Bacharelado'  )
+INTO Titulacao VALUES ('549316775-00', TO DATE('01/04/1986','dd/MM/yyyy') , 'Pontifícia Universidade Católica de São Paulo' , 'Bacharelado'  )
+INTO Titulacao VALUES ('549316775-00', TO DATE('06/10/1991','dd/MM/yyyy') , 'Universidade Federal de Pernambuco'            , 'Mestrado'     )
+SELECT 1 FROM DUAL
+
+-- 2.10 Edição
+
+INSERT ALL
+INTO Edicao VALUES (1 , '648752006-56', TO DATE('13/01/2001','dd/MM/yyyy'))
+INTO Edicao VALUES (2 , '648752006-56', TO DATE('18/01/2001','dd/MM/yyyy'))
+INTO Edicao VALUES (3 , '283492009-11', TO DATE('20/05/2004','dd/MM/yyyy'))
+INTO Edicao VALUES (4 , '945632778-12', TO DATE('01/08/2001','dd/MM/yyyy'))
+INTO Edicao VALUES (5 , '549316775-00', TO DATE('17/10/2006','dd/MM/yyyy'))
+SELECT 1 FROM DUAL
+
+-- 2.11 Seção
+
+INSERT ALL
+INTO Secao VALUES ('Saúde'      , '648752006-56')
+INTO Secao VALUES ('Polícia'    , '283492009-11')
+INTO Secao VALUES ('Tecnologia' , '283492009-11')
+INTO Secao VALUES ('Politica'   , '945632778-12')
+INTO Secao VALUES ('Educação'   , '549316775-00')
+INTO Secao VALUES ('Religião'   , '549316775-00')
+INTO Secao VALUES ('Esportes'   , '283492009-11')
+SELECT 1 FROM ALL
+
+-- 2.12 Matéria
+
+INSERT ALL
+INTO Materia VALUES (1 , 'Saúde'     , 1 , 'Saúde investiga morte de casal por maculosa'                           , TO_DATE('13/01/2001' , 'dd/MM/yyyy'), 'Os trabalhadores rurais José Ronaldo da Silva, de 24 anos, e Maria Martina, de 21, ficaram internados poucas horas na Unidade de Terapia Intensiva (UTI) do HC'                                                                                                                                                                                                                                   , '<link para anexo>')
+INTO Materia VALUES (2 , 'Polícia'   , 1 , 'Explosão em subestação da CPFL causa apagão em Campinas'               , TO_DATE('18/01/2001' , 'dd/MM/yyyy'), 'Ao menos 15 bairros da cidade ficaram sem energia elétrica; 50 mil pessoas afetadas'                                                                                                                                                                                                                                                                                                              , '<link para anexo>')
+INTO Materia VALUES (3 , 'Polícia'   , 2 , 'Cadeias brasileiras - março'                                           , TO_DATE('20/05/2004' , 'dd/MM/yyyy'), 'Temos a quarta maior população carcerária do mundo, constituída principalmente por pessoas envolvidas no tráfico de drogas. Para piorar, uma passagem pelas cadeias brasileiras é passaporte quase certeiro para a reincidência: nossos presídios são especialmente ineficientes em reabilitar os criminosos e dois terços deles acaba voltando para trás das grades.'                            , '<link para anexo>')
+INTO Materia VALUES (4 , 'Saúde'     , 1 , 'Vitamina D - abril'                                                    , TO_DATE('01/08/2001' , 'dd/MM/yyyy'), 'Eis mais uma pauta de saúde que se relacionava diretamente com a vida do repórter que a escreveu. Daniel Cunha, diagnosticado com esclerose múltipla, nos sugeriu a reportagem depois de fazer um tratamento com hiperdoses de vitamina D. Em pouco tempo, ele apresentou melhoras significativas.'                                                                                               , '<link para anexo>')
+INTO Materia VALUES (5 , 'Política'  , 3 , 'Como o governo, o comércio e os bancos ganham o seu dinheiro - outubro', TO_DATE('17/10/2006' , 'dd/MM/yyyy'), 'Essa pauta surgiu de uma sensação generalizada da redação (e da espécie humana): a falta de dinheiro. Foi imbuído da missão de explicar por quais buracos invisíveis nosso dinheiro desaparece, que o redator-chefe Alexandre Versignassi - craque em deixar interessante até o mais chato dos assuntos econômicos - resolveu escrever esta reportagem.'                                          , '<link para anexo>')
+INTO Materia VALUES (6 , 'Tecnologia', 4 , 'iCar'                                                                  , TO_DATE('02/07/2010' , 'dd/MM/yyyy'), 'A SUPER foi o primeiro veículo do mundo a publicar o anúncio do tão esperado carro da Apple, o iCar. Foi o primeiro porque ele não existe: fomos nós que bolamos o produto e criamos a propaganda - tudo baseado em patentes e tecnologias que a própria Apple desenvolveu ou registrou.'                                                                                                         , '<link para anexo>')
+INTO Materia VALUES (7 , 'Educação'  , 4 , 'Quatro escolas públicas, pobres e excelentes'                          , TO_DATE('03/12/2010' , 'dd/MM/yyyy'), 'A Fundação Lemann procurou a SUPER com um mapeamento valiosíssimo: uma pesquisas que mostrava quais eram as escolas públicas brasileiras que atendem a um público pobre, e que têm um ensino excelente. Decidimos que deveríamos fazer uma reportagem e uma série de vídeos para investigar o que torna esses colégios tão bons. '                                                                , '<link para anexo>')
+INTO Materia VALUES (8 , 'Tecnologia', 5 , 'O lado negro do Facebook'                                              , TO_DATE('30/06/2011' , 'dd/MM/yyyy'), 'Quando o editor Bruno Garattoni chegou com uma pauta sobre os mecanismos ocultos que o Facebook trama para nos conquistar, não foi difícil convencer a redação inteira de que estava aí uma bela reportagem. Estava mais do que na hora de falarmos aquilo que ninguém sabia sobre essa rede social, que ocupa horas e horas da vida dos brasileiros. Dito e feito: foi capa e um baita sucesso.' , '<link para anexo>')
+INTO Materia VALUES (9 , 'Polícia'   , 5 , 'Estupro '                                                              , TO_DATE('20/07/2011' , 'dd/MM/yyyy'), 'Tudo começou um ano antes da reportagem, quando o assunto da violência sexual pipocou pela primeira vez em uma reunião de pauta. "É um tema importantíssimo", bradei juntamente com a ala feminina da revista. "Deixamos pro mês que vem", disse o resto. Quando os casos de estupro na USP não pararam de se acumular, decidimos todos que era hora de falar no assunto incômodo.'               , '<link para anexo>')
+INTO Materia VALUES (10, 'Religião'  , 6 , 'Maomé'                                                                 , TO_DATE('17/04/2013' , 'dd/MM/yyyy'), 'Logo depois dos atentados à revista satírica Charlie Hebdo, a redação congelou: como abordar um assunto importante desses (que, mal sabíamos nós, voltaria com tudo nos atentados a Paris em novembro) com a cara da SUPER? A resposta logo surgiu: falando do fundador do islamismo, é claro.'                                                                                                   , '<link para anexo>')
+SELECT 1 FROM ALL
+
+-- 2.12 Jornalista <escreve> Matéria
+
+INSERT ALL
+INTO JornTrabMateria VALUES ('648752006-56' , 10)
+INTO JornTrabMateria VALUES ('648752006-56' ,  9)
+INTO JornTrabMateria VALUES ('283492009-11' ,  2)
+INTO JornTrabMateria VALUES ('283492009-11' ,  5)
+INTO JornTrabMateria VALUES ('945632778-12' ,  1)
+INTO JornTrabMateria VALUES ('945632778-12' ,  3)
+INTO JornTrabMateria VALUES ('945632778-12' ,  7)
+INTO JornTrabMateria VALUES ('549316775-00' ,  4)
+INTO JornTrabMateria VALUES ('549316775-00' ,  8)
+INTO JornTrabMateria VALUES ('549316775-00' ,  6)
+SELECT 1 FROM ALL
