@@ -348,7 +348,7 @@ INTO Titulacao VALUES ('665482660-02', TO_DATE('25/12/2000','dd/MM/yyyy') , 'Uni
 INTO Titulacao VALUES ('554826331-22', TO_DATE('07/09/1996','dd/MM/yyyy') , 'Universidade Católica de Pernambuco'           , 'Bacharelado'  )
 INTO Titulacao VALUES ('785663215-00', TO_DATE('01/04/1986','dd/MM/yyyy') , 'Pontifícia Universidade Católica de São Paulo' , 'Bacharelado'  )
 INTO Titulacao VALUES ('153664872-66', TO_DATE('06/10/1991','dd/MM/yyyy') , 'Universidade Federal de Pernambuco'            , 'Mestrado'     )
-SELECT 1 FROM DUAL
+SELECT 1 FROM DUAL;
 
 -- 2.9 Edição
 
