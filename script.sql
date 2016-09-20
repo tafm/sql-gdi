@@ -180,12 +180,12 @@ CREATE TABLE Premiacao (
 -- 1.14 (Jornalista <escreve> Matéria) <ganha> Premiação
 
 CREATE TABLE Ganha (
-	premiacao integer,
-	cpf varchar2(15),
-	id_materia integer,
-	CONSTRAINT ganha_pkey PRIMARY KEY (cpf, id_materia),
-	CONSTRAINT ganha_premiacao_fkey1 FOREIGN KEY (premiacao) REFERENCES Premiacao (id),
-	CONSTRAINT ganha_jortrabmateria_fkey2 FOREIGN KEY (cpf, id_materia) REFERENCES JornTrabMateria (cpf, id_materia)
+    premiacao integer,
+    cpf varchar2(15),
+    id_materia integer,
+    CONSTRAINT ganha_pkey PRIMARY KEY (cpf, id_materia, premiacao),
+    CONSTRAINT ganha_premiacao_fkey1 FOREIGN KEY (premiacao) REFERENCES Premiacao (id),
+    CONSTRAINT ganha_jortrabmateria_fkey2 FOREIGN KEY (cpf, id_materia) REFERENCES JornTrabMateria (cpf, id_materia)
 );
 
 -- 1.15 Fotos
@@ -207,16 +207,6 @@ CREATE TABLE Foto (
 	CONSTRAINT foto_pkey PRIMARY KEY (id),
 	CONSTRAINT foto_fotografo_fkey1 FOREIGN KEY (fotografo) REFERENCES Fotografo (cpf),
 	CONSTRAINT foto_materia_fkey2 FOREIGN KEY (materia) REFERENCES Materia (id)
-);
-
--- 1.16 Evento
-
-CREATE TABLE Evento (
-	nome varchar2(50),
-	fotografo varchar2(15),
-	data date,
-	CONSTRAINT evento_pkey PRIMARY KEY (nome, fotografo, data),
-	CONSTRAINT evento_fotografo_fkey1 FOREIGN KEY (fotografo) REFERENCES Fotografo (cpf)
 );
 
 -- 2. Povoamento de tabelas
@@ -430,7 +420,20 @@ INSERT INTO Premiacao VALUES (ID_PREMIACAO.Nextval, 'MPT',         TO_DATE('15/1
 
 -- 1.14 (Jornalista <escreve> Matéria) <ganha> Premiação
 
--- 1.15 Foto
+INSERT ALL
+INTO GANHA VALUES (1,   '658775462-03', 1)
+INTO GANHA VALUES (2,   '782662490-13', 1)
+INTO GANHA VALUES (3,   '665482660-02', 2)
+INTO GANHA VALUES (4,   '554826331-22', 3)
+INTO GANHA VALUES (5,   '785663215-00', 4)
+INTO GANHA VALUES (6,   '153664872-66', 5)
+INTO GANHA VALUES (7,   '456987415-44', 5)
+INTO GANHA VALUES (8,   '554826331-22', 6)
+INTO GANHA VALUES (9,   '785441365-99', 6)
+INTO GANHA VALUES (10,  '782662490-13', 7)
+SELECT 1 FROM DUAL;
+
+-- 1.15 Fotos
 
 INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '234908724-88', 1,  NULL);
 INSERT INTO Foto VALUES (ID_FOTO.Nextval,   '234908724-88', 1,  NULL);
